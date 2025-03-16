@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA5RP Вирты</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #111; color: white; text-align: center; }
+        .container { max-width: 500px; margin: 50px auto; padding: 20px; background: #222; border-radius: 10px; }
+        select, input, button { width: 100%; padding: 10px; margin: 10px 0; border: none; border-radius: 5px; }
+        button { background: #28a745; color: white; cursor: pointer; }
+        button:hover { background: #218838; }
+    </style>
+    <script>
+        function changeLanguage() {
+            var lang = document.getElementById("language").value;
+
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white p-4">
+      <div className="flex w-full justify-between items-center max-w-4xl mb-6">
+        <h1 className="text-3xl font-bold">{t.title}</h1>
+        <Select onValueChange={setLanguage} defaultValue={language}>
+          <SelectTrigger className="w-32">
+            <Globe className="mr-2" /> <SelectValue placeholder={t.lang} />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="en">English</SelectItem>
+            <SelectItem value="ru">Русский</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      <Card className="w-full max-w-md">
+        <CardContent className="p-6 flex flex-col items-center">
+          <h2 className="text-xl font-semibold">GTA 5 RP - {t.price}: $10 per 1M</h2>
+          <Input placeholder="Enter your username" className="mt-4 mb-4 w-full" />
+          <Button className="flex items-center gap-2">
+            <ShoppingCart /> {t.buy}
+          </Button>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
